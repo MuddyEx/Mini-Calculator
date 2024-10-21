@@ -1,51 +1,30 @@
-// Function for addition
-function add() {
-    let Inpt1 = Number(document.getElementById("Inpt1").value);
-    let Inpt2 = Number(document.getElementById("Inpt2").value);
-    let result = Inpt1 + Inpt2;
-    document.getElementById("result").textContent = result;
-}
+function calculate(calculation) {
 
-// Function for subtraction
-function subtract() {
-    let Inpt1 = Number(document.getElementById("Inpt1").value);
-    let Inpt2 = Number(document.getElementById("Inpt2").value);
-    let result = Inpt1 - Inpt2;
-    document.getElementById("result").textContent = result
-}
+    // Get the input values
+    
+    const num1 = Number(document.getElementById('input1').value);
+    const num2 = Number(document.getElementById('input2').value);
+    let result;
 
-// Function for multiplication
-function multiply() {
-    let Inpt1 = Number(document.getElementById("Inpt1").value);
-    let Inpt2 = Number(document.getElementById("Inpt2").value);
-    let result = Inpt1 * Inpt2;
-    document.getElementById("result").textContent = result
-}
 
-// Function for division
-function divide() {
-    let Inpt1 = Number(document.getElementById("Inpt1").value);
-    let Inpt2 = Number(document.getElementById("Inpt2").value);
-    if (Inpt2 === 0) {
-        document.getElementById("result").textContent = "Cannot divide by zero";
-    } else {
-        let result = Inpt1 / Inpt2;
-        document.getElementById("result").textContent = result
+    if (calculation === '+') {
+        result = num1 + num2;
+    } else if (calculation === '-') {
+        result = num1 - num2;
+    } else if (calculation === '*') {
+        result = num1 * num2;
+    } else if (calculation === '/') {
+        if (num2 !== 0) {
+            result = num1 / num2;
+        } else {
+            result = 'Cannot divide by zero';
+        }
+    } else if (calculation === '%') {
+        result = (num1 / 100) * num2; 
+    } else if (calculation === 'mod') {
+        result = num1 % num2; 
     }
-}
 
-// Function for modulus
-function mod() {
-    let Inpt1 = Number(document.getElementById("Inpt1").value);
-    let Inpt2 = Number(document.getElementById("Inpt2").value);
-    let result = Inpt1 % Inpt2;
-    document.getElementById("result").textContent = result
-}
-
-// Function for percentage
-function percentage() {
-    let Inpt1 = Number(document.getElementById("Inpt1").value);
-    let Inpt2 = Number(document.getElementById("Inpt2").value);
-    let result = (Inpt1 / 100) * Inpt2;
-    document.getElementById("result").textContent = result
+    // Display the result
+    document.getElementById('result').textContent = `Result: ${result}`;
 }

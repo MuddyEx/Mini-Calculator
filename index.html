@@ -10,28 +10,27 @@
 <body>
     <main>
 
-     <h1>Mini Calculator</h1>
-     <div class="container">
-        <div class="input-container">
-            <input type="number" id="Inpt1" placeholder="">
-            <input type="number" id="Inpt2" placeholder="">
-        </div>
-        <div class="btn-output-div">
+        <div class="calculator">
+            <h1>Simple Calculator</h1>
 
-             <!-- Buttons For Each Signs -->
-            <div class="btn-container">
-               <button onclick="add()">+</button> 
-               <button onclick="subtract()">−</button>
-               <button onclick="multiply()">×</button>
-               <button onclick="divide()">÷</button>
-               <button onclick="percentage()">%</button>
-               <button onclick="mod()">mod</button>
+            <!-- Input fields for numbers -->
+            <input type="number" id="input1" placeholder="">
+            <input type="number" id="input2" placeholder="">
+
+
+            <!-- Buttons for calculations -->
+            <div class="buttons">
+                <button onclick="calculate('+')">+</button>
+                <button onclick="calculate('-')">-</button>
+                <button onclick="calculate('*')">×</button>
+                <button onclick="calculate('/')">÷</button>
+                <button onclick="calculate('%')">%</button>
+                <button onclick="calculate('mod')">MOD</button> 
             </div>
-
-             <!-- Output Result -->
-            <div id="result"></div>
+    
+            <!-- Output area for the result -->
+            <div id="result">Result will be shown here</div>
         </div>
-     </div>
 
     </main>
     <script src="script.js"></script>
